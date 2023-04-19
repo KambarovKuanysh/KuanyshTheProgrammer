@@ -13,7 +13,15 @@ public class MyArrayList <T> implements MyList{
         }
         return false;
     }
-
+    @Override
+    public boolean remove(Object item) {
+        int index = indexOf(item);
+        if (index >= 0) {
+            remove(index);
+            return true;
+        }
+        return false;
+    }
     @Override
     public void add(Object item){
         if(size == arr.length){
