@@ -38,9 +38,9 @@ public class MyArrayList <T> implements MyList{
         return false;
     }
     /**
-     * @function remove удаляет объект из массива
-     * @param index индекст элемента для удаления
-     * @return boolean
+     * @function remove deletes object from array
+     * @param index index of deleted object
+     * @return Object
      * **/
     @Override
     public Object remove(int index) {
@@ -52,6 +52,11 @@ public class MyArrayList <T> implements MyList{
         this.size--;
         return temporary;
     }
+    /**
+     * @function indexOf returns index of first object appearing
+     * @param o object for search
+     * @return int
+     * **/
     @Override
     public int indexOf(Object o) {
         for (int i = 0; i < arr.length; i++) {
@@ -61,12 +66,22 @@ public class MyArrayList <T> implements MyList{
         }
         return -1;
     }
+    /**
+     * @function lastIndexOf returns index of last object appearing
+     * @param o object for search
+     * @return int
+     * **/
     @Override
     public int lastIndexOf(Object o) {
         int index = -1;
         for (int i = 0; i < arr.length; i++) if (arr[i].equals((T) o) && i > index) index = i;
         return index;
     }
+    /**
+     * @function sort sorts by bubble sort
+     * @noparam
+     * @return void
+     * **/
     @Override
     public void sort() {
         for(int i = 0; i < size; i++) {
@@ -120,6 +135,11 @@ public class MyArrayList <T> implements MyList{
         }
         arr = newArr;
     }
+    /**
+     * @function get returns object with got index
+     * @param index object index
+     * @return Object
+     * **/
     @Override
     public T get(int index) {
         checkIndex(index);
@@ -135,12 +155,22 @@ public class MyArrayList <T> implements MyList{
     public int size() {
         return size;
     }
+    /**
+     * @function checkIndex checks index for validity
+     * @param index index that will be checked
+     * @return void
+     * **/
 
     public void checkIndex(int index){
         if(index < 0 || index>=size){
             throw new IndexOutOfBoundsException();
         }
     }
+    /**
+     * @function clear clears array
+     * @noparam
+     * @return void
+     * **/
     @Override
     public void clear(){
         this.arr = (T[]) new Object[5];
