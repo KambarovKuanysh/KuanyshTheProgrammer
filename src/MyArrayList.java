@@ -23,6 +23,15 @@ public class MyArrayList <T> implements MyList{
         return false;
     }
     @Override
+    public int indexOf(Object o) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i].equals((T) o)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+    @Override
     public void add(Object item){
         if(size == arr.length){
             increaseBounds();
@@ -68,15 +77,5 @@ public class MyArrayList <T> implements MyList{
         this.arr = (T[]) new Object[5];
         this.size = 0;
     }
-    @Override
-    public T remove(int index){
-        checkIndex(index);
-        T removed = arr[index];
-        for(int i= index + 1; i<size; i++){
-            arr[i-1] = arr[i];
 
-        }
-        size--;
-        return removed;
-    }
 }
