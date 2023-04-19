@@ -8,17 +8,24 @@ public class MyArrayList <T> implements MyList{
     }
 
     @Override
-    public void add(T item){
+    public void add(Object item){
         if(size == arr.length){
-            increaseBuffer();
+            increaseBounds();
         }
-        arr[size++] = item;
+        arr[size++] =(T) item;
     }
-    @Override
-    public void add(T item, int index){
 
+    @Override
+    public void add(Object item, int index){
+        checkIndex(index);
+        increaseBounds();
+        for(int i = size; i>index; i--) {
+            arr[i] = arr[i-1];
+        }
+        arr[index] = (T) item;
+        size++;
     }
-    public void increaseBuffer(){
+    public void increaseBounds(){
         T[] newArr = (T[]) new Object[arr.length*2];
         for(int i=0; i< arr.length; i++){
             newArr[i]=arr[i];
