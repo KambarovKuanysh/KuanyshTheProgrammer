@@ -12,15 +12,30 @@ public class MyLinkedList<E> implements MyList<E>{
     private Node head;
     private Node tail;
     private int size;
+    /**
+     * @function constructor
+     * @noparam
+     * @return void
+     **/
     public MyLinkedList() {
         this.head = null;
         this.tail = null;
         this.size = 0;
     }
+    /**
+     * @function size gives size of an array
+     * @noparams
+     * @return int
+     * **/
     @Override
     public int size() {
         return size;
     }
+    /**
+     * @function contains checks if an object in an array
+     * @param o object that will be searched
+     * @return boolean
+     * **/
     @Override
     public boolean contains(Object o) {
         Node current = head;
@@ -32,6 +47,11 @@ public class MyLinkedList<E> implements MyList<E>{
         }
         return false;
     }
+    /**
+     * @function add adds object into array
+     * @param item object that will added
+     * @return void
+     * **/
     @Override
     public void add(E item) {
         Node newNode = new Node(item, null, tail);
@@ -44,6 +64,12 @@ public class MyLinkedList<E> implements MyList<E>{
         tail = newNode;
         size++;
     }
+    /**
+     * @function add true if Object in array
+     * @param item object thaw will be added
+     * @param index index which determines location of new object
+     * @return void
+     * **/
     @Override
     public void add(Object item, int index) {
         if (index < 0 || index > size) {
@@ -79,6 +105,11 @@ public class MyLinkedList<E> implements MyList<E>{
         }
         size++;
     }
+    /**
+     * @function remove deletes object from array
+     * @param item deleted object
+     * @return boolean
+     * **/
     @Override
     public boolean remove(Object item) {
         Node current = head;
@@ -90,6 +121,11 @@ public class MyLinkedList<E> implements MyList<E>{
         }
         return false;
     }
+    /**
+     * @function remove deletes object from array
+     * @param index index of deleted object
+     * @return Object
+     * **/
     @Override
     public void remove(int index) {
         if (index < 0 || index >= size) {
@@ -128,12 +164,22 @@ public class MyLinkedList<E> implements MyList<E>{
         }
         size--;
     }
+    /**
+     * @function clear clears array
+     * @noparam
+     * @return void
+     * **/
     @Override
     public void clear() {
         head = null;
         tail = null;
         size = 0;
     }
+    /**
+     * @function get returns object with got index
+     * @param index object index
+     * @return Object
+     * **/
     @Override
     public E get(int index) {
         if (index < 0 || index >= size) {
@@ -154,6 +200,11 @@ public class MyLinkedList<E> implements MyList<E>{
         }
         return current.element;
     }
+    /**
+     * @function indexOf returns index of first object appearing
+     * @param o object for search
+     * @return int
+     * **/
     @Override
     public int indexOf(Object o) {
         Node current = head;
@@ -167,6 +218,11 @@ public class MyLinkedList<E> implements MyList<E>{
         }
         return -1;
     }
+    /**
+     * @function lastIndexOf returns index of last object appearing
+     * @param o object for search
+     * @return int
+     * **/
     @Override
     public int lastIndexOf(Object o) {
         Node current = tail;
