@@ -1,4 +1,5 @@
 public class MyLinkedList<E> implements MyList{
+    private MyArrayList elements = new MyArrayList<E>();
 
     private class Node<E> {
         E val;
@@ -115,18 +116,33 @@ public class MyLinkedList<E> implements MyList{
 
     @Override
     public int indexOf(Object o) {
-        return 0;
+        int i = 0;
+        Node<E> nextNode = this.head;
+        while (!nextNode.equals(null)) {
+            if (this.head.val.equals(o)) return i;
+            nextNode = nextNode.next;
+            i++;
+        }
+        return -1;
     }
 
     @Override
     public int lastIndexOf(Object o) {
-        return 0;
+        int i = size()-1;
+        Node<E> node = this.tail;
+        while (i >= 0) {
+            if (node.equals(o)) return i;
+            node = this.tail.previous;
+            i--;
+        }
+        return -1;
     }
 
     @Override
     public void sort() {
-
+       ///could not implement
     }
+
     private Node findIndexedNode(int index) {
         Node toSearch;
         toSearch = this.head;
