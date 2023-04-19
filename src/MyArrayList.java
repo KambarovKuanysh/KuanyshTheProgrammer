@@ -1,4 +1,4 @@
-public class MyArrayList <T> {
+public class MyArrayList <T> implements MyList{
     private T[] arr;
     private int size;
 
@@ -6,11 +6,17 @@ public class MyArrayList <T> {
         this.arr = (T[]) new Object[5];
         this.size = 0;
     }
+
+    @Override
     public void add(T item){
         if(size == arr.length){
             increaseBuffer();
         }
         arr[size++] = item;
+    }
+    @Override
+    public void add(T item, int index){
+
     }
     public void increaseBuffer(){
         T[] newArr = (T[]) new Object[arr.length*2];
@@ -19,29 +25,36 @@ public class MyArrayList <T> {
         }
         arr = newArr;
     }
-    public T getElement(int index) {
+    @Override
+    public T get(int index) {
         checkIndex(index);
         return arr[index];
     }
 
-    public int getSize() {
+    @Override
+    public int size() {
         return size;
     }
+
     public void checkIndex(int index){
         if(index < 0 || index>=size){
             throw new IndexOutOfBoundsException();
         }
     }
+    @Override
     public void clear(){
         this.arr = (T[]) new Object[5];
         this.size = 0;
     }
-
-    public void delete(int index){
+    @Override
+    public T remove(int index){
         checkIndex(index);
+        T removed = arr[index];
         for(int i= index + 1; i<size; i++){
             arr[i-1] = arr[i];
+
         }
         size--;
+        return removed;
     }
 }
