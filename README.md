@@ -6,7 +6,7 @@
 **Description**: It creates a new array with twice the length of the current array, copies the elements of the old array to the new array, and replaces the old array with the new array.
 
 ```java
-public void increaseBufferIfNeeded(){
+public void increaseBounds(){
     if(size == arr.length){
         T[] newArr = (T[]) new Object[arr.length*2];
         for(int i=0; i< arr.length; i++){
