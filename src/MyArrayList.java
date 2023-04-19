@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class MyArrayList <T> implements MyList{
     private T[] arr;
     private int size;
@@ -43,14 +45,12 @@ public class MyArrayList <T> implements MyList{
      * @return Object
      * **/
     @Override
-    public Object remove(int index) {
+    public void remove(int index) {
         checkIndex(index);
-        T temporary = this.arr[index];
-        for(int i= index + 1; i<size; i++){
+        for(int i= index + 1; i<=size; i++){
             arr[i-1] = arr[i];
         }
         this.size--;
-        return temporary;
     }
     /**
      * @function indexOf returns index of first object appearing
@@ -73,12 +73,17 @@ public class MyArrayList <T> implements MyList{
      * **/
     @Override
     public int lastIndexOf(Object o) {
-        int index = -1;
-        for (int i = 0; i < arr.length; i++) if (arr[i].equals((T) o) && i > index) index = i;
-        return index;
+        try {
+            int index = -1;
+            for (int i = 0; i < arr.length; i++) if (arr[i].equals((T) o) && i > index) index = i;
+            return index;
+        }
+        catch (Exception e){
+            return -1;
+        }
     }
     /**
-     * @function sort sorts by bubble sort
+     * @function sort sorts by bubble sort+
      * @noparam
      * @return void
      * **/
@@ -175,6 +180,11 @@ public class MyArrayList <T> implements MyList{
     public void clear(){
         this.arr = (T[]) new Object[5];
         this.size = 0;
+    }
+    @Override
+    public String toString() {
+        return Arrays.toString(arr);
+
     }
 
 }
