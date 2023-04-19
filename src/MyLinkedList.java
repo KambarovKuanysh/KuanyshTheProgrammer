@@ -87,4 +87,13 @@ public class MyLinkedList<E> implements MyList{
     public void sort() {
 
     }
+    private Node findIndexedNode(int index) {
+        Node toSearch;
+        toSearch = this.head;
+        while (index != 0) {
+            toSearch = toSearch.next;
+            index--;
+        }
+        return toSearch;
+    }
 }
