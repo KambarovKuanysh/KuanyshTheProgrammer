@@ -6,7 +6,7 @@ public class Main {
         MyArrayList<Object> list = new MyArrayList<>();
         System.out.println("> Adding variables");
         list.add(16);
-        list.add("A");
+        list.add("D");
         list.add(false);
         list.add("C");
         list.add(1);
@@ -27,7 +27,7 @@ public class Main {
         System.out.println(list.remove(false));
         System.out.println(list.get(0));
         System.out.println("> Checking for index of object A");
-        System.out.println(list.indexOf("A"));
+        System.out.println(list.lastIndexOf("A"));
         System.out.println("> Checking clear method");
         list.clear();
         System.out.println(list.size());
