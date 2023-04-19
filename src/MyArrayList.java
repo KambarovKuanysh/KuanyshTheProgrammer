@@ -32,6 +32,24 @@ public class MyArrayList <T> implements MyList{
         return -1;
     }
     @Override
+    public int lastIndexOf(Object o) {
+        int index = -1;
+        for (int i = 0; i < arr.length; i++) if (arr[i].equals((T) o) && i > index) index = i;
+        return index;
+    }
+    @Override
+    public void sort() {
+        for(int i = 0; i < size; i++) {
+            for (int j = i; j < size; j++) {
+                if ((int) arr[j] < (int) arr[i]) {
+                    T temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+    }
+    @Override
     public void add(Object item){
         if(size == arr.length){
             increaseBounds();
