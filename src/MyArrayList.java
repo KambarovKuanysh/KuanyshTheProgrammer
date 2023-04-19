@@ -19,4 +19,17 @@ public class MyArrayList <T> {
         }
         arr = newArr;
     }
+    public T getElement(int index) {
+        checkIndex(index);
+        return arr[index];
+    }
+
+    public int getSize() {
+        return size;
+    }
+    public void checkIndex(int index){
+        if(index < 0 || index>=size){
+            throw new IndexOutOfBoundsException();
+        }
+    }
 }
