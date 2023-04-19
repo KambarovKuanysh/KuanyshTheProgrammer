@@ -44,7 +44,24 @@ public class MyLinkedList<E> implements MyList{
 
     @Override
     public void add(Object item, int index) {
-
+        Node oldNode = findIndexedNode(index);
+        Node node = new Node<E>((E) item);
+        if (this.head.equals(oldNode)) {
+            node.next = this.head;
+            this.head.previous = node;
+            this.head = node;
+        } else if (this.tail.equals(oldNode)){
+            node.next = this.tail;
+            node.previous = this.tail.previous;
+            this.tail.previous.next = node;
+            this.tail.previous = node;
+        } else {
+            node.previous = oldNode.previous;
+            node.next = oldNode;
+            oldNode.previous.next = node;
+            oldNode.previous = node;
+        }
+        size++;
     }
 
     @Override
