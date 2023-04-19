@@ -6,6 +6,13 @@ public class MyArrayList <T> implements MyList{
         this.arr = (T[]) new Object[5];
         this.size = 0;
     }
+    @Override
+    public boolean contains(Object o){
+        for(T element : arr) {
+            if (o.equals(element)) return true;
+        }
+        return false;
+    }
 
     @Override
     public void add(Object item){
