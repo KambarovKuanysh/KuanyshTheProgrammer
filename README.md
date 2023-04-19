@@ -1,4 +1,4 @@
-# Assignment2 Documentation
+# MyArrayList and MyLinkedList
 
 ### myArrayList.java
 
