@@ -54,7 +54,24 @@ public class MyLinkedList<E> implements MyList{
 
     @Override
     public Object remove(int index) {
-        return null;
+        checkIndex(index);
+        Node node = findIndexedNode(index);
+
+        if (node.previous == null) {
+            this.head = node.next;
+            this.head.previous = null;
+        }
+        else if (node.next == null) {
+            this.tail = node.previous;
+            this.tail.next = null;
+        }
+        else {
+            node.previous.next = node.next;
+            node.next.previous = node.previous;
+        }
+
+        this.size--;
+        return node.val;
     }
 
     @Override
@@ -95,5 +112,10 @@ public class MyLinkedList<E> implements MyList{
             index--;
         }
         return toSearch;
+    }
+    private void checkIndex(int index){
+        if(index < 0 || index>=size){
+            throw new IndexOutOfBoundsException();
+        }
     }
 }
