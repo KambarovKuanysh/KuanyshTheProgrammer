@@ -2,7 +2,7 @@
 
 ### myArrayList.java
 
-### ➕ increaseBufferIfNeeded
+### increaseBufferIfNeeded
 **Description**: It creates a new array with twice the length of the current array, copies the elements of the old array to the new array, and replaces the old array with the new array.
 
 ```java
@@ -16,7 +16,7 @@ public void increaseBufferIfNeeded(){
     }
 }
 ```
-### ➕ size
+### size
 **Description**: This method returns the number of elements in the array.
 
 ```java
@@ -24,7 +24,7 @@ public int size() {
     return this.size;
 }
 ```
-### ➕ contains
+### contains
 **Description**: This method checks if the array contains the specified object. It returns true if the array contains the object and false otherwise.
 
 ```java
@@ -36,7 +36,7 @@ public boolean contains(Object o) {
     return false;
 }
 ```
-### ➕ add
+### add
 **Description**: This method adds an element to the end of the array. If the array is full, it calls the increaseBufferIfNeeded() method to increase the size of the array.
 
 ```java
@@ -46,7 +46,7 @@ public void add(Object item) {
     arr[size++] = (T) item;
 }
 ```
-### ➕ add
+### add
 **Description**: This method adds an element at a specified index in the array. If the array is full, it calls the increaseBufferIfNeeded() method to increase the size of the array. It shifts all the elements from the specified index to the end of the array one position to the right before inserting the new element.
 
 ```java
@@ -60,7 +60,7 @@ public void add(Object item, int index) {
     size++;
 }
 ```
-### ➕ remove
+### remove
 **Description**: This method removes the element at the specified index from the array. It shifts all the elements from the specified index to the end of the array one position to the left after removing the element.
 
 ```java
@@ -74,7 +74,7 @@ public boolean remove(Object item) {
     return false;
 }
 ```
-### ➕ remove
+### remove
 **Description**: This method removes the element at the specified index from the array. It shifts all the elements from the specified index to the end of the array one position to the left after removing the element.
 
 ```java
@@ -89,7 +89,7 @@ public Object remove(int index) {
     return temporary;
 }
 ```
-### ➕ clear
+### clear
 **Description**: This method clears the array by setting its size to 0 and creating a new array of length 5.
 
 ```java
@@ -99,7 +99,7 @@ public void clear(){
     this.size = 0;
 }
 ```
-### ➕ get
+### get
 **Description**: This method returns the element at the specified index in the array.
 ```java
 @Override
@@ -108,7 +108,7 @@ public Object get(int index) {
     return arr[index];
 }
 ```
-### ➕ indexOf
+### indexOf
 **Description**: This method returns the index of the first occurrence of the specified object in the array. If the object is not found, it returns -1.
 ```java
 @Override
@@ -121,7 +121,7 @@ public int indexOf(Object o) {
     return -1;
 }
 ```
-### ➕ lastIndexOf
+### lastIndexOf
 **Description**: This method returns the index of the last occurrence of the specified object in the array. If the object is not found, it returns -1.
 ```java
 @Override
@@ -132,7 +132,7 @@ public int lastIndexOf(Object o) {
 }
 ```
 
-### ➕ sort
+### sort
 **Description**: This method sorts the elements of the array in ascending order using the bubble sort algorithm. It only works for arrays of Integer type.
 ```java
 @Override
@@ -153,7 +153,7 @@ public void sort() {
     }
 }
 ```
-### ➕ checkIndex
+### checkIndex
 **Description**: This is a helper method that checks if the specified index is valid for the array. If the index is less than 0 or greater than or equal to the size of the array, it throws an IndexOutOfBoundsException.
 ```java
 private void checkIndex(int index){
@@ -165,7 +165,7 @@ private void checkIndex(int index){
 
 ## MyLinkedList.java
 
-### ➕ size
+### size
 **Description**: This method returns the number of elements in the list.
 
 ```java
@@ -173,14 +173,14 @@ public int size() {
     return this.size;
 }
 ```
-### ➕ contains
+### contains
 **Description**: This function returns true if the given object is present in the linked list, otherwise false.
 ```java
 public boolean contains(Object o) {
     return (indexOf(o) != -1 ? true : false);
 }
 ```
-### ➕ createNode
+### createNode
 **Description**: This function creates a new node containing the given item and adds it to the linked list.
 ```java
 private void createNode(E item) {
@@ -194,7 +194,7 @@ private void createNode(E item) {
     this.tail = node;
 }
 ```
-### ➕ add
+### add
 **Description**: This function adds a new element to the end of the linked list.
 ```java
 @Override
@@ -204,7 +204,7 @@ public void add(Object item) {
     size++;
 }
 ```
-### ➕ add
+### add
 **Description**: This function is similar to add(Object item) but also allows the option to not save the item in a separate ArrayList.
 ```java
 public void add(Object item, boolean notSave) {
@@ -213,7 +213,7 @@ public void add(Object item, boolean notSave) {
     size++;
 }
 ```
-### ➕ add
+### add
 **Description**: This function adds a new element at the specified index of the linked list.
 ```java
 @Override
@@ -240,7 +240,7 @@ public void add(Object item, int index) {
     size++;
 }
 ```
-### ➕ remove
+### remove
 **Description**: This function removes the given object from the linked list, if it exists.
 ```java
 @Override
@@ -255,7 +255,7 @@ public boolean remove(Object item) {
     return false;
 }
 ```
-### ➕ remove
+### remove
 **Description**:  This function removes the element at the given index from the linked list.
 ```java
 @Override
@@ -281,7 +281,7 @@ public Object remove(int index) {
 
 }
 ```
-### ➕ clear
+### clear
 **Description**: This function removes all elements from the linked list.
 ```java
 @Override
@@ -291,7 +291,7 @@ public void clear() {
     size = 0;
 }
 ```
-### ➕ get
+### get
 **Description**: This function returns the element at the given index in the linked list.
 ```java
 @Override
@@ -300,7 +300,7 @@ public Object get(int index) {
     return getNodeByIndex(index).val;
 }
 ```
-### ➕ indexOf
+### indexOf
 **Description**: This function returns the index of the first occurrence of the given object in the linked list, or -1 if not found.
 ```java
 @Override
@@ -315,7 +315,7 @@ public int indexOf(Object o) {
     return -1;
 }
 ```
-### ➕ lastIndexOf
+### lastIndexOf
 **Description**: This function returns the index of the first occurrence of the given object in the linked list, or -1 if not found.
 ```java
 @Override
@@ -328,33 +328,5 @@ public int lastIndexOf(Object o) {
         i--;
     }
     return -1;
-}
-```
-
-### ➕ sort
-**Description**: This function sorts the elements of the linked list in ascending order using bubble sort (O(n^2)). Note: this function will only work if all the elements in the linked list are integers.
-```java
-@Override
-public void sort() {
-    try{
-        Integer.valueOf((int) this.get(0));
-    } catch (ClassCastException e) {
-        return;
-    }
-    elements.sort();
-    this.clear();
-    for (int i = 0; i < elements.size(); i++) {
-        this.add(elements.get(i), false);
-    }
-
-}
-```
-### ➕ checkIndex
-**Description**: This is a helper method that checks if the specified index is valid for the array. If the index is less than 0 or greater than or equal to the size of the array, it throws an IndexOutOfBoundsException.
-```java
-private void checkIndex(int index){
-    if(index < 0 || index>=size){
-        throw new IndexOutOfBoundsException();
-    }
 }
 ```
