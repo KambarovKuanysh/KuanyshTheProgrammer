@@ -3,6 +3,7 @@ public class MyLinkedList<E> implements MyList<E>{
         private E element;
         private Node next;
         private Node previous;
+        // Constructor for a new node
         public Node(E element, Node next, Node previous) {
             this.element = element;
             this.next = next;
@@ -12,30 +13,51 @@ public class MyLinkedList<E> implements MyList<E>{
     private Node head;
     private Node tail;
     private int size;
-    /**
-     * @function constructor
-     * @noparam
-     * @return void
-     **/
+    // Constructor for an empty linked list
     public MyLinkedList() {
         this.head = null;
         this.tail = null;
         this.size = 0;
     }
-    /**
-     * @function size gives size of an array
-     * @noparams
-     * @return int
-     * **/
+    public void show(){
+        Node currentNode = head;
+        while(currentNode!=null){
+            System.out.println(currentNode.element);
+            currentNode = currentNode.next;
+        }
+    }
+    public void reverse(){
+        Node previousNode = null;
+        Node currentNode = head;
+        Node nextNode = null;
+
+        while(currentNode != null){
+            nextNode = currentNode.next;
+            currentNode.next = previousNode;
+            previousNode = currentNode;
+            currentNode = nextNode;
+        }
+        head = previousNode;
+    }
+    public void addAllElementsByIndex(E[] set, int index){
+            Node currentNode = head;
+            for (int i = 0; i < index - 1; i++) {
+                currentNode = currentNode.next;
+            }
+            Node endOfNode = currentNode.next;
+            for (int i = 0; i < set.length; i++) {
+                Node newNode = new Node(set[i], null, null);
+                currentNode.next = newNode;
+                currentNode = currentNode.next;
+            }
+            currentNode.next = endOfNode;
+    }
+    // Returns the length of linked list
     @Override
     public int size() {
         return size;
     }
-    /**
-     * @function contains checks if an object in an array
-     * @param o object that will be searched
-     * @return boolean
-     * **/
+    // Checks if the linked list contains a given object
     @Override
     public boolean contains(Object o) {
         Node current = head;
@@ -47,11 +69,7 @@ public class MyLinkedList<E> implements MyList<E>{
         }
         return false;
     }
-    /**
-     * @function add adds object into array
-     * @param item object that will added
-     * @return void
-     * **/
+    // Adds a new element to the end of the linked list
     @Override
     public void add(E item) {
         Node newNode = new Node(item, null, tail);
@@ -64,12 +82,7 @@ public class MyLinkedList<E> implements MyList<E>{
         tail = newNode;
         size++;
     }
-    /**
-     * @function add true if Object in array
-     * @param item object thaw will be added
-     * @param index index which determines location of new object
-     * @return void
-     * **/
+    // Adds a new element to the linked list at a specified index, throwing an exception if the index is out of bounds
     @Override
     public void add(Object item, int index) {
         if (index < 0 || index > size) {
@@ -105,11 +118,7 @@ public class MyLinkedList<E> implements MyList<E>{
         }
         size++;
     }
-    /**
-     * @function remove deletes object from array
-     * @param item deleted object
-     * @return boolean
-     * **/
+    // Checks if an element has been deleted
     @Override
     public boolean remove(Object item) {
         Node current = head;
@@ -121,11 +130,7 @@ public class MyLinkedList<E> implements MyList<E>{
         }
         return false;
     }
-    /**
-     * @function remove deletes object from array
-     * @param index index of deleted object
-     * @return Object
-     * **/
+    // Removes an element from the linked list at a specified index, throwing an exception if the index is out of bounds
     @Override
     public void remove(int index) {
         if (index < 0 || index >= size) {
@@ -164,22 +169,14 @@ public class MyLinkedList<E> implements MyList<E>{
         }
         size--;
     }
-    /**
-     * @function clear clears array
-     * @noparam
-     * @return void
-     * **/
+    //clear() - clears linked list
     @Override
     public void clear() {
         head = null;
         tail = null;
         size = 0;
     }
-    /**
-     * @function get returns object with got index
-     * @param index object index
-     * @return Object
-     * **/
+    // Returns the element at the specified index, throwing an exception if the index is out of bounds
     @Override
     public E get(int index) {
         if (index < 0 || index >= size) {
@@ -200,11 +197,7 @@ public class MyLinkedList<E> implements MyList<E>{
         }
         return current.element;
     }
-    /**
-     * @function indexOf returns index of first object appearing
-     * @param o object for search
-     * @return int
-     * **/
+    // Returns index of the element which first matched the incoming element
     @Override
     public int indexOf(Object o) {
         Node current = head;
@@ -218,11 +211,7 @@ public class MyLinkedList<E> implements MyList<E>{
         }
         return -1;
     }
-    /**
-     * @function lastIndexOf returns index of last object appearing
-     * @param o object for search
-     * @return int
-     * **/
+    // Returns index of the element which last matched the incoming element
     @Override
     public int lastIndexOf(Object o) {
         Node current = tail;
@@ -238,6 +227,20 @@ public class MyLinkedList<E> implements MyList<E>{
     }
     @Override
     public void sort() {
-
+        Node current = head;
+        Node index;
+        E temp;
+        while (current != null){
+            index = current.next;
+            while (index != null){
+                if (((Comparable<E>)current.element).compareTo(index.element) > 0){
+                    temp = current.element;
+                    current.element = index.element;
+                    index.element = temp;
+                }
+                index = index.next;
+            }
+            current = current.next;
+        }
     }
 }

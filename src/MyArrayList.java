@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class MyArrayList <T> implements MyList{
     private T[] arr;
-    private int size;
+    private int size = 10;
 
     /**
      * @function constructor
@@ -12,6 +12,19 @@ public class MyArrayList <T> implements MyList{
     MyArrayList(){
         this.arr = (T[]) new Object[5];
         this.size = 0;
+    }
+    public void addAllElementsByIndex(T[] data, int index){
+        int num = 0;
+        for(int i = index; i < data.length;i++){
+            add(data[i], index);
+            index++;
+        }
+    }
+    public void show(){
+        for(int i = 0; i < size; i++){
+            System.out.println(arr[i]);
+
+        }
     }
     /**
      * @function contains checks if an object in an array
@@ -134,7 +147,7 @@ public class MyArrayList <T> implements MyList{
      * @return void
      * **/
     public void increaseBounds(){
-        T[] newArr = (T[]) new Object[arr.length*2];
+        T[] newArr = (T[]) new Object[arr.length*2 + 3];
         for(int i=0; i< arr.length; i++){
             newArr[i]=arr[i];
         }
@@ -167,9 +180,6 @@ public class MyArrayList <T> implements MyList{
      * **/
 
     public void checkIndex(int index){
-        if(index < 0 || index>=size){
-            throw new IndexOutOfBoundsException();
-        }
     }
     /**
      * @function clear clears array
