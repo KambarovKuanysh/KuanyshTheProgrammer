@@ -1,6 +1,6 @@
 
 
-# Assignment2 Documentation
+# Assignment2 and Assignment3 Documentation
 
 ### MyArrayListQueue
 ###  enqueue
