@@ -1,5 +1,9 @@
 import java.util.NoSuchElementException;
+/**
 
+ MyArrayListQueue is a class that implements a queue using an ArrayList data structure.
+ It contains methods for enqueueing, dequeue, peeking, checking if the queue is empty, and getting the size.
+ */
 public class MyArrayListQueue <E>{
     private MyArrayList<E> queue;
 
