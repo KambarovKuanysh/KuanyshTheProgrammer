@@ -6,4 +6,7 @@ public class MyLinkedListStack <E>{
     public void push(E element) {
         stack.addFirst(element);
     }
+    public boolean isEmpty(){
+        return stack.isEmpty();
+    }
 }

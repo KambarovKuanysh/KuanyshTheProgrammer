@@ -250,4 +250,7 @@ public class MyLinkedList<E> implements MyList<E>{
             current = current.next;
         }
     }
+    boolean isEmpty(){
+        return head == null;
+    }
 }
