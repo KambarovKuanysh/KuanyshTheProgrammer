@@ -282,11 +282,13 @@ public class MyLinkedList<E> implements MyList<E>{
         Node currentNode = head;
         if(head == null){
             head = newNode;
+            size++;
             return;
         }
         while(currentNode.next != null){
             currentNode = currentNode.next;
         }
         currentNode.next = newNode;
+        size++;
     }
 }
