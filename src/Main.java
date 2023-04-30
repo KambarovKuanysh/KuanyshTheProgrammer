@@ -27,10 +27,13 @@ public class Main {
         System.out.println(stack.isEmpty());
         stack.push(1);
         stack.push(2);
+        stack.size();
         stack.stack.show();
+
         System.out.println(stack.pop());
         System.out.println(stack.peek());
         System.out.println(stack.pop());
         System.out.println(stack.isEmpty());
+        System.out.println(stack.size());
     }
 }
