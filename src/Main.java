@@ -4,6 +4,27 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
+        MyArrayList<Integer> ArrayList = new MyArrayList<>();       //Assignment 2 defense
+        MyLinkedList<Integer> LinkedList = new MyLinkedList();
+        LinkedList.add(1);
+        LinkedList.add(2);
+        LinkedList.add(3);
+        Integer[] data = new Integer[]{4, 5, 6};
+        ArrayList.add(1);
+        ArrayList.add(2);
+        ArrayList.add(3);
+        ArrayList.addAllElementsByIndex(data, 0);
+        LinkedList.addAllElementsByIndex(data, 2);
+        System.out.println("ArrayList");
+        ArrayList.show();
+        System.out.println("============================");
+        System.out.println("LinkedList");
+
+        LinkedList.show();
+
+        System.out.println("============================");
+
         Main.testLLS(); //MyLinkedListStack test
         Main.testALS(); //MyArrayListStack test
         Main.testLLQ(); //MyLinkedListQueue
