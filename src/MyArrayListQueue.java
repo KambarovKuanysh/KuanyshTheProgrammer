@@ -11,9 +11,15 @@ public class MyArrayListQueue <E>{
     }
     public E dequeue() {
         if (isEmpty()) {
-            throw new NoSuchElementException("Queue is empty");
+            throw new NoSuchElementException();
         }
         return queue.removeFirst();
+    }
+    public E peek() {
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+        return queue.get(0);
     }
     public boolean isEmpty() {
         return queue.isEmpty();
