@@ -21,5 +21,15 @@ public class Main {
         System.out.println("============================");
 
         LinkedList.show();
+        System.out.println("============================");
+        //Test
+        MyLinkedListStack<Integer> stack = new MyLinkedListStack<>();
+        stack.push(1);
+        stack.push(2);
+        System.out.println(stack.peek());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        stack.pop();
+
     }
 }

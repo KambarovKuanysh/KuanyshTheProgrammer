@@ -20,10 +20,13 @@ public class MyLinkedList<E> implements MyList<E>{
         this.size = 0;
     }
     public void addFirst(E element){
-        Node rest = head.next;
-        Node newHead = new Node(element, null, null);
-        head = newHead;
-        newHead.next = rest;
+        if (head == null) {
+            head = tail = new Node(element, null, null);
+        }
+        else {
+            Node newNode = new Node(element, head, null);
+            head = newNode;
+        }
         size++;
     }
 
@@ -252,14 +255,26 @@ public class MyLinkedList<E> implements MyList<E>{
         }
     }
     boolean isEmpty(){
-        return head == null;
+        return size == 0;
     }
     E getFirst(){
         return head.element;
     }
     E removeFirst(){
         Node removed = head;
-        head = head.next;
+        if(head == null){
+            return null;
+        }
+        /*
+        else if(head.next == null){
+            head = null;
+        }
+
+         */
+        else {
+            head = head.next;
+        }
+        size--;
         return removed.element;
     }
 }
