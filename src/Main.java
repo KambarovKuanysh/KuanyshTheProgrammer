@@ -29,6 +29,7 @@ public class Main {
         stack.push(2);
         stack.stack.show();
         System.out.println(stack.pop());
+        System.out.println(stack.peek());
         System.out.println(stack.pop());
         System.out.println(stack.isEmpty());
     }

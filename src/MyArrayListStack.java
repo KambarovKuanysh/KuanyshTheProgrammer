@@ -17,4 +17,10 @@ public class MyArrayListStack <E>{
         }
         return stack.removeFirst();
     }
+    public E peek() {
+        if (isEmpty()) {
+            throw new EmptyStackException();
+        }
+        return stack.get(0);
+    }
 }
