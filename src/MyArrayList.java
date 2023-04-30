@@ -200,4 +200,12 @@ public class MyArrayList <T> implements MyList{
     boolean isEmpty(){
         return size == 0;
     }
+    T removeFirst(){
+        T removed = arr[0];
+        for(int i = 0; i < size; i++){
+            arr[i] = arr[i + 1];
+        }
+        size--;
+        return removed;
+    }
 }

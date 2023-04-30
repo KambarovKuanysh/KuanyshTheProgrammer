@@ -1,3 +1,5 @@
+import java.util.EmptyStackException;
+
 public class MyArrayListStack <E>{
     public MyArrayList<E> stack;
     public MyArrayListStack() {
@@ -8,5 +10,11 @@ public class MyArrayListStack <E>{
     }
     public boolean isEmpty() {
         return stack.isEmpty();
+    }
+    public E pop() {
+        if (isEmpty()) {
+            throw new EmptyStackException();
+        }
+        return stack.removeFirst();
     }
 }
