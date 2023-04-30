@@ -23,15 +23,10 @@ public class Main {
         LinkedList.show();
         System.out.println("============================");
         //Test
-        MyLinkedListStack<Integer> stack = new MyLinkedListStack<>();
+        MyArrayListStack<Integer> stack = new MyArrayListStack<>();
         stack.push(1);
         stack.push(2);
-        System.out.println(stack.peek());
-        System.out.println(stack.pop());
-        System.out.println(stack.size());
-        System.out.println(stack.pop());
-        System.out.println(stack.size());
-        System.out.println(stack.isEmpty());
+        stack.stack.show();
 
     }
 }
