@@ -24,9 +24,10 @@ public class Main {
         System.out.println("============================");
         //Test
         MyArrayListStack<Integer> stack = new MyArrayListStack<>();
+        System.out.println(stack.isEmpty());
         stack.push(1);
         stack.push(2);
         stack.stack.show();
-
+        System.out.println(stack.isEmpty());
     }
 }

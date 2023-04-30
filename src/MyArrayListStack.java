@@ -6,4 +6,7 @@ public class MyArrayListStack <E>{
     public void push(E element) {
         stack.add(element, 0);
     }
+    public boolean isEmpty() {
+        return stack.isEmpty();
+    }
 }

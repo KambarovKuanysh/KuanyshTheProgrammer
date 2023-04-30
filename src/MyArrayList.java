@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class MyArrayList <T> implements MyList{
     private T[] arr;
-    private int size = 10;
+    private int size = 0;
 
     /**
      * @function constructor
@@ -19,6 +19,7 @@ public class MyArrayList <T> implements MyList{
             add(data[i], index);
             index++;
         }
+        size += data.length;
     }
     public void show(){
         for(int i = 0; i < size; i++){
@@ -196,5 +197,7 @@ public class MyArrayList <T> implements MyList{
         return Arrays.toString(arr);
 
     }
-
+    boolean isEmpty(){
+        return size == 0;
+    }
 }
