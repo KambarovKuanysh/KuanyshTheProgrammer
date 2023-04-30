@@ -26,5 +26,8 @@ public class Main {
         MyLinkedListQueue<Integer> queue = new MyLinkedListQueue<>();
         queue.enqueue(2);
         queue.enqueue(4);
+        System.out.println(queue.dequeue());
+        queue.dequeue();
+        System.out.println(queue.isEmpty() + " " + queue.size());
     }
 }
