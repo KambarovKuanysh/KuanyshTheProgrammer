@@ -24,4 +24,7 @@ public class MyArrayListQueue <E>{
     public boolean isEmpty() {
         return queue.isEmpty();
     }
+    public int size() {
+        return queue.size();
+    }
 }
