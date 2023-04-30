@@ -24,6 +24,7 @@ public class MyLinkedList<E> implements MyList<E>{
         Node newHead = new Node(element, null, null);
         head = newHead;
         newHead.next = rest;
+        size++;
     }
 
     public void show(){
