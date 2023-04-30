@@ -19,6 +19,13 @@ public class MyLinkedList<E> implements MyList<E>{
         this.tail = null;
         this.size = 0;
     }
+    public void addFirst(E element){
+        Node rest = head.next;
+        Node newHead = new Node(element, null, null);
+        head = newHead;
+        newHead.next = rest;
+    }
+
     public void show(){
         Node currentNode = head;
         while(currentNode!=null){

@@ -19,6 +19,7 @@ public class Main {
         ArrayList.show();
         System.out.println("LinkedList");
         System.out.println("============================");
+
         LinkedList.show();
     }
 }
