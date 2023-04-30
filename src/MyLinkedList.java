@@ -253,4 +253,7 @@ public class MyLinkedList<E> implements MyList<E>{
     boolean isEmpty(){
         return head == null;
     }
+    void removeFirst(){
+        head = head.next;
+    }
 }
