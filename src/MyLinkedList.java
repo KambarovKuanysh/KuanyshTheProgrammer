@@ -277,4 +277,16 @@ public class MyLinkedList<E> implements MyList<E>{
         size--;
         return removed.element;
     }
+    void addLast(E element){
+        Node newNode = new Node(element, null, null);
+        Node currentNode = head;
+        if(head == null){
+            head = newNode;
+            return;
+        }
+        while(currentNode.next != null){
+            currentNode = currentNode.next;
+        }
+        currentNode.next = newNode;
+    }
 }
