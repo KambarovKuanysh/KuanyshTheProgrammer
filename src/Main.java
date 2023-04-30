@@ -121,7 +121,7 @@ public class Main {
         String hardDivider = "========================================";
         String divider = "----------------------------------------";
         MyArrayListQueue<Integer> ALQ = new MyArrayListQueue<>();
-        System.out.println("> MyLinkedListQueue");
+        System.out.println("> MyArrayListQueue");
         System.out.println(divider);
 
         System.out.println("> Enqueued values: 1, 2, 3");
